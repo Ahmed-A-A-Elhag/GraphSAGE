@@ -98,7 +98,7 @@ if __name__ == '__main__':
   parser.add_argument('--data', type = str, default="Cora")
   
   parser.add_argument('--num-hid', type = int)
-  parser.add_argument('--aggregator-type', type = int, default = 'Mean')
+  parser.add_argument('--aggregator-type', type = str, default = 'Mean')
   
 
   args = parser.parse_args()
