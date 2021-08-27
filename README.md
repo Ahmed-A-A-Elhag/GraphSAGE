@@ -19,7 +19,7 @@ Paper Reference: https://arxiv.org/abs/1706.02216
 ### Train the model of Cora dataset
 
 ```git
-!python GCN/src/main.py  --num-epochs 200 --data 'Cora' --num-hid  16  
+!python GraphSAGE/src/main.py  --num-epochs 200 --data 'Cora' --num-hid  1024
 ```
 
 ### Results
