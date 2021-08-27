@@ -1,6 +1,8 @@
 import torch
 from torch_scatter import scatter
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 class GraphSAGE_Mean(torch.nn.Module):
     """
     GraphSAGE_Mean layer
