@@ -28,7 +28,7 @@ if torch.cuda.is_available():
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def train(model, data, num_epochs, use_edge_index=False):
+def train(model, data, num_epochs, use_edge_index=True):
     if not use_edge_index:
 
         # Create the adjacency matrix
@@ -98,7 +98,7 @@ if __name__ == '__main__':
   parser.add_argument('--data', type = str, default="Cora")
   
   parser.add_argument('--num-hid', type = int)
-
+  parser.add_argument('--aggregator-type', type = int, default = 'Mean')
   
 
   args = parser.parse_args()
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         dataset = torch_geometric.datasets.Planetoid(root='/', name='CiteSeer')
 
         
-  model = GraphSAGE(nfeat = dataset.num_features, nhid = args.num_hid, nclass = dataset.num_classes)
+  model = GraphSAGE(nfeat = dataset.num_features, nhid = args.num_hid, nclass = dataset.num_classes, aggregator = aggregator_type)
 
   train(model, data = dataset[0] , num_epochs = args.num_epochs)
   
