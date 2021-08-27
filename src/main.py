@@ -98,7 +98,7 @@ if __name__ == '__main__':
   parser.add_argument('--data', type = str, default="Cora")
   
   parser.add_argument('--num-hid', type = int)
-  parser.add_argument('--aggregator-type', type = str, default = 'Mean')
+  parser.add_argument('--aggregator', type = str, default = 'Mean')
   
 
   args = parser.parse_args()
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         dataset = torch_geometric.datasets.Planetoid(root='/', name='CiteSeer')
 
         
-  model = GraphSAGE(nfeat = dataset.num_features, nhid = args.num_hid, nclass = dataset.num_classes, aggregator = aggregator_type)
+  model = GraphSAGE(nfeat = dataset.num_features, nhid = args.num_hid, nclass = dataset.num_classes, aggregator = args.aggregator)
 
   train(model, data = dataset[0] , num_epochs = args.num_epochs)
   
