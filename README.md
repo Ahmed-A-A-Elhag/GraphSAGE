@@ -25,9 +25,7 @@ Paper Reference: https://arxiv.org/abs/1706.02216
 ### Results
 
 
-
-
-|    Dataset      |          Type  | Nodes          |Edges         | Classes     | Features   |Test Accuracy    |
+|    Dataset      |          Type  | Nodes          |Edges         | Classes     | Features   |Mean Aggregator    |      MaxPooling Aggregator   |
 | -------------   | -------------    |------------- |------------- |------------- |------------- |-------------------- |
-| Cora            |  Citation Network |     2,708   |   5,429      |     7        |    1,433     |       81.5 士 1      |    
-| Citeseer        |  Citation Network |     3,327   |   4,732      |     6        |    3,703     |       69 士  0.8    |     
+| Cora            |  Citation Network |     2,708   |   5,429      |     7        |    1,433     |       80.0 士 1     |    81.0 士 1 |
+| Citeseer        |  Citation Network |     3,327   |   4,732      |     6        |    3,703     |       68 士  1   |    69.5 士  0.8| 
